@@ -23,7 +23,6 @@ Grading system gif demo
 
 **Server:** Spring Boot, java, mysql
 
-To create a README file for your APIs, you can provide information about the purpose of your APIs, how to use them, and any other relevant details. Here's an example structure you can follow:
 
 # API Documentation
 
