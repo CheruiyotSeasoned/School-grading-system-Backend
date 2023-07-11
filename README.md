@@ -20,7 +20,6 @@ Grading system gif demo
 
 ## Tech Stack
 
-**Client:** React, Bootstrap
 
 **Server:** Spring Boot, java, mysql
 
