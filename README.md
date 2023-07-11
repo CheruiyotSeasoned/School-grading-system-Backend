@@ -46,23 +46,119 @@ The API uses appropriate HTTP status codes to indicate the success or failure of
 ## Endpoints
 
 **Student API URLs:**
-- GET http://localhost:8088/api/v1/student/ranked-ranking-sheet: Retrieves the ranked ranking sheet of students.
-- POST http://localhost:8088/api/v1/student/add-add-student: Adds a new student.
-- DELETE http://localhost:8088/api/v1/student/studentAdm-delete-student: Deletes a student.
-- PUT http://localhost:8088/api/v1/student/studentAdm-update: Updates a student's information.
+- GET http://localhost:8088/api/v1/student/ranked: Retrieves the ranked ranking sheet of students.
+- POST http://localhost:8088/api/v1/student/add: Adds a new student.
+```json
+{
+  "adm": 4,
+  "firstName": "kelvin",
+  "lastName": "tenai",
+  "subjects": [
+    {
+      "subjectId": 1
+    },
+    {
+      "subjectId": 2
+    },{
+      "subjectId": 3
+    },
+    {
+      "subjectId": 4
+    },
+    {
+      "subjectId": 5
+    },
+    {
+      "subjectId": 6
+    },
+    {
+      "subjectId": 9
+    },
+    {
+      "subjectId": 12
+    }
+  ]
+}
+
+```
+- DELETE http://localhost:8088/api/v1/student/{studentAdm}: Deletes a student.
+- PUT http://localhost:8088/api/v1/student/{studentAdm}: Updates a student's information.
 
 **Subject API URLs:**
-- GET http://localhost:8088/api/v1/subject/list-subject-list: Retrieves a list of subjects.
-- POST http://localhost:8088/api/v1/subject/add-add-subjects: Adds a new subject.
-- DELETE http://localhost:8088/api/v1/subject/{subjectId}-delete-subject: Deletes a subject by its ID.
-- PUT http://localhost:8088/api/v1/subject/{subjectId}-update-subject: Updates a subject's information by its ID.
+- GET http://localhost:8088/api/v1/subject/list: Retrieves a list of subjects.
+- POST http://localhost:8088/api/v1/subject/add: Adds a new subject.
+- ```json
+    {
+    "name": "Maths",
+    "category": "Compulsory"
+  },
+  {
+    "name": "Eng",
+    "category": "Compulsory"
+  },
+  {
+    "name": "Kis",
+    "category": "Compulsory"
+  },
+  {
+    "name": "Bio",
+    "category": "Sciences"
+  },
+  {
+    "name": "Phy",
+    "category": "Sciences"
+  },
+  {
+    "name": "Chem",
+    "category": "Sciences"
+  },
+  {
+    "name": "Geog",
+    "category": "Humanities"
+  },
+  {
+    "name": "CRE",
+    "category": "Humanities"
+  },
+  {
+    "name": "Histo",
+    "category": "Humanities"
+  },
+  {
+    "name": "Agri",
+    "category": "Technical"
+  },
+  {
+    "name": "Comp",
+    "category": "Technical"
+  },
+  {
+    "name": "BeD",
+    "category": "Technical"
+  }
+
+
+  ```
+- DELETE http://localhost:8088/api/v1/subject/{subjectId}: Deletes a subject by its ID.
+- PUT http://localhost:8088/api/v1/subject/{subjectId}: Updates a subject's information by its ID.
 
 **Score API URLs:**
-- GET http://localhost:8088/api/v1/scores/list-score-list: Retrieves a list of scores.
-- POST http://localhost:8088/api/v1/scores/{studentAdm}/{subjectId}-add-scores: Adds scores for a specific student and subject.
-- DELETE http://localhost:8088/api/v1/scores/{studentAdm}/{subjectId}-delete-score: Deletes scores for a specific student and subject.
-- PUT http://localhost:8088/api/v1/scores/{studentAdm}/{subjectId}-update-score: Updates scores for a specific student and subject.
-- GET http://localhost:8088/api/v1/scores/subject-mean/{subject_name}-mean-per-subject: Retrieves the mean score per subject.
+- GET http://localhost:8088/api/v1/scores/list: Retrieves a list of scores.
+- POST http://localhost:8088/api/v1/scores/{studentAdm}/{subjectId}: Adds scores for a specific student and subject.
+- 
+
+```json
+{
+  "adm": 3,
+  "subjectId": 1,
+  "score": 80
+}
+```
+  
+
+- DELETE http://localhost:8088/api/v1/scores/{studentAdm}/{subjectId}: Deletes scores for a specific student and subject.
+- PUT http://localhost:8088/api/v1/scores/{studentAdm}/{subjectId}: Updates scores for a specific student and subject.
+- GET http://localhost:8088/api/v1/scores/subject-mean/{subject_name}: Retrieves the mean score per subject.
 
 
 ### 1. Add Score with (score base url)
@@ -123,7 +219,7 @@ The API uses appropriate HTTP status codes to indicate the success or failure of
     - `studentAdm` (path variable): The admission number of the student.
 - Example Request:
   ```bash
-  GET /students/12345/scores
+  GET /api/v1/students/12345/
   ```
 - Example Response:
   ```json
@@ -140,6 +236,7 @@ The API uses appropriate HTTP status codes to indicate the success or failure of
       }
     ]
   }
+  
   ```
 
 ## Conclusion
