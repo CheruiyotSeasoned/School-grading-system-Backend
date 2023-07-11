@@ -27,8 +27,7 @@ Grading system gif demo
 # API Documentation
 
 ## Introduction
-This API documentation provides details about the endpoints and functionality of our API. It is intended to help developers understand and utilize the available resources effectively.
-
+This Api documentation can be used to access endpoints
 ## Student Base URL
 The base URL for all API endpoints is `http://localhost:8088/api/v1/student/`.
 ## Subject Base URL
