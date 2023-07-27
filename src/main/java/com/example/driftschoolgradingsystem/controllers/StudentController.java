@@ -45,10 +45,9 @@ public class StudentController {
 //            Subject subject = subjectService.getSubjectById(subjectId);
 //            subjects.add(subject);
 //        }
-//        studentEntity.setSubjects(subjects);
+//        studentEntity.setSubjects(subject
 //        studentService.addNewStudent(studentEntity); // or studentService.saveStudent(studentEntity);
 //        return ResponseEntity.ok("Student added successfully");
-//    }
 @PostMapping("/add")
 public ResponseEntity<String> addStudent(@RequestBody StudentRequest request) {
     int compulsoryCount = 0;
